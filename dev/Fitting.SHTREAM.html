@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Fitting.FITTING.html">
+<link rel="Up" href="Fitting.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Abort" rel="Chapter" href="Abort.html">
+<link title="Adaptor" rel="Chapter" href="Adaptor.html">
+<link title="AnyShtream" rel="Chapter" href="AnyShtream.html">
+<link title="AnyShtreamSig" rel="Chapter" href="AnyShtreamSig.html">
+<link title="Channel" rel="Chapter" href="Channel.html">
+<link title="Delimited" rel="Chapter" href="Delimited.html">
+<link title="DepDAG" rel="Chapter" href="DepDAG.html">
+<link title="Disposal" rel="Chapter" href="Disposal.html">
+<link title="Fitting" rel="Chapter" href="Fitting.html">
+<link title="FittingSig" rel="Chapter" href="FittingSig.html">
+<link title="Flags" rel="Chapter" href="Flags.html">
+<link title="IVar" rel="Chapter" href="IVar.html">
+<link title="Line" rel="Chapter" href="Line.html">
+<link title="LineShtream" rel="Chapter" href="LineShtream.html">
+<link title="PriorityQueue" rel="Chapter" href="PriorityQueue.html">
+<link title="Proc" rel="Chapter" href="Proc.html">
+<link title="Reader" rel="Chapter" href="Reader.html">
+<link title="Shtream" rel="Chapter" href="Shtream.html">
+<link title="ShtreamSig" rel="Chapter" href="ShtreamSig.html">
+<link title="Signal" rel="Chapter" href="Signal.html">
+<link title="StringShtream" rel="Chapter" href="StringShtream.html">
+<link title="Util" rel="Chapter" href="Util.html">
+<link title="UsrBin" rel="Chapter" href="UsrBin.html">
+<link title="Version" rel="Chapter" href="Version.html">
+<link title="WeakPlus" rel="Chapter" href="WeakPlus.html"><title>Shcaml : Fitting.SHTREAM</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Fitting.html" title="Fitting">Up</a>
+&nbsp;<a class="post" href="Fitting.FITTING.html" title="Fitting.FITTING">Next</a>
+</div>
+<h1>Module type <a href="type_Fitting.SHTREAM.html">Fitting.SHTREAM</a></h1>
+
+<pre><span class="keyword">module type</span> SHTREAM = <code class="type"><a href="AnyShtreamSig.S.html">AnyShtreamSig.S</a></code></pre><div class="info modtype top">
+The input signature of the functor <a href="Fitting.Make.html"><code class="code"><span class="constructor">Fitting</span>.<span class="constructor">Make</span></code></a>.
+<p>
+
+ This matches <a href="AnyShtreamSig.S.html"><code class="code"><span class="constructor">AnyShtreamSig</span>.<span class="constructor">S</span></code></a>, the output signature of
+ <a href="AnyShtream.Make.html"><code class="code"><span class="constructor">AnyShtream</span>.<span class="constructor">Make</span></code></a>.
+<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">include</span> <a href="Shtream.COMMON.html">Shtream.COMMON</a></pre>
+<div class="info ">
+The result of <code class="code"><span class="constructor">AnyShtream</span>.<span class="constructor">Make</span></code> contains all the type-indifferent
+ shtream operations from <code class="code"><span class="constructor">Shtream</span></code>.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="AnyShtreamSig.S.Elem.html">Elem</a>: <code class="type"><a href="AnyShtreamSig.ELEM.html">AnyShtreamSig.ELEM</a></code><code class="type"> </code></pre><div class="info">
+Access to the underlying element type and operations.
+</div>
+
+<pre><span id="TYPEelem"><span class="keyword">type</span> <code class="type">'a</code> elem</span> = <code class="type">'a Elem.elem</code> </pre>
+<div class="info ">
+Alias for <a href="AnyShtreamSig.ELEM.html#TYPEelem"><code class="code"><span class="constructor">AnyShtreamSig</span>.<span class="constructor">ELEM</span>.elem</code></a><br>
+</div>
+
+
+<pre><span id="TYPEinitial"><span class="keyword">type</span> <code class="type"></code>initial</span> = <code class="type">Elem.initial</code> </pre>
+<div class="info ">
+Alias for <a href="AnyShtreamSig.ELEM.html#TYPEinitial"><code class="code"><span class="constructor">AnyShtreamSig</span>.<span class="constructor">ELEM</span>.initial</code></a><br>
+</div>
+
+
+<pre><span id="VALelem_reader"><span class="keyword">val</span> elem_reader</span> : <code class="type"><a href="Reader.html#TYPEt">Reader.t</a> -><br>       Pervasives.in_channel -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a></code></pre><div class="info ">
+Construct an <code class="code">initial elem</code> reader from a record reader.
+ Functions such as <a href="AnyShtreamSig.S.html#VALof_channel"><code class="code"><span class="constructor">AnyShtreamSig</span>.<span class="constructor">S</span>.of_channel</code></a> and <a href="AnyShtreamSig.S.html#VALof_program"><code class="code"><span class="constructor">AnyShtreamSig</span>.<span class="constructor">S</span>.of_program</code></a> take a function
+ of the type returned here.<br>
+</div>
+
+<pre><span id="VALoutput"><span class="keyword">val</span> output</span> : <code class="type">?channel:Pervasives.out_channel -><br>       ?init:('a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> -> string) -><br>       ?term:('a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> -> string) -><br>       ?show:('a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> -> string) -><br>       'a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t -> unit</code></pre><div class="info ">
+Write the entire contents of a shtream on a channel.
+ For each element <code class="code">x</code> of the shtream, it prints <code class="code">init x</code>, then
+ <code class="code">show x</code>, and then <code class="code">term x</code> on the channel, and then flushes the
+ channel.
+<br>
+</div>
+<div class="param_info"><code class="code">channel</code> : default = <code class="code">stdout</code></div>
+<div class="param_info"><code class="code">init</code> : default = <code class="code"><span class="keyword">fun</span> _ <span class="keywordsign">-&gt;</span> <span class="string">""</span></code></div>
+<div class="param_info"><code class="code">term</code> : default = <code class="code"><span class="keyword">fun</span> _ <span class="keywordsign">-&gt;</span> <span class="string">"\n"</span></code></div>
+<div class="param_info"><code class="code">show</code> : default = <code class="code"><span class="constructor">Elem</span>.string_of ()</code></div>
+
+<pre><span id="VALchannel_of"><span class="keyword">val</span> channel_of</span> : <code class="type">?procref:<a href="Channel.html#TYPEprocref">Channel.procref</a> -><br>       ?before:(unit -> unit) -><br>       ?after:(unit -> unit) -><br>       ?init:('a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> -> string) -><br>       ?term:('a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> -> string) -><br>       ?show:('a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> -> string) -><br>       'a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t -> Pervasives.in_channel</code></pre><div class="info ">
+Construct an <code class="code">in_channel</code> from the data in a
+ shtream.  If forking a child is necessary (see
+ <a href="Shtream.html#VALchannel_of"><code class="code"><span class="constructor">Shtream</span>.channel_of</code></a>), then the optional
+ parameter <code class="code">?before</code> (resp. <code class="code">?after</code>) is called in the child
+ before (resp. after) printing the shtream; anything printed on
+ <code class="code">stdout</code> by <code class="code">?before</code> (<code class="code">?after</code>) appears in the resultant
+ <code class="code">in_channel</code> before (after) the shtream data.
+<p>
+
+ The remaining arguments are as for <a href="AnyShtreamSig.S.html#VALoutput"><code class="code"><span class="constructor">AnyShtreamSig</span>.<span class="constructor">S</span>.output</code></a>.<br>
+</div>
+
+<pre><span id="VALstring_list_of"><span class="keyword">val</span> string_list_of</span> : <code class="type">?show:('a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> -> string) -><br>       'a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t -> string list</code></pre><div class="info ">
+Convert a shtream to a list of strings, using <code class="code">?show</code>.<br>
+</div>
+
+<pre><span id="VALstring_stream_of"><span class="keyword">val</span> string_stream_of</span> : <code class="type">?show:('a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> -> string) -><br>       'a <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t -> string Stream.t</code></pre><div class="info ">
+Convert a shtream to a <i>standard library</i> <code class="code"><span class="constructor">Stream</span>.t</code> of
+ strings, using <code class="code">?show</code>.<br>
+</div>
+
+<pre><span id="VALof_channel"><span class="keyword">val</span> of_channel</span> : <code class="type">?reader:(Pervasives.in_channel -><br>                <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a>) -><br>       Pervasives.in_channel -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t</code></pre><div class="info ">
+Read a shtream from a channel, using <code class="code">?reader</code>.<br>
+</div>
+
+<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type">?reader:(Pervasives.in_channel -><br>                <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a>) -><br>       string -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t</code></pre><div class="info ">
+Read a shtream from a file, using <code class="code">?reader</code>.<br>
+</div>
+
+<pre><span id="VALof_command"><span class="keyword">val</span> of_command</span> : <code class="type">?procref:<a href="Channel.html#TYPEprocref">Channel.procref</a> -><br>       ?dups:<a href="Channel.html#TYPEdup_spec">Channel.dup_spec</a> -><br>       ?reader:(Pervasives.in_channel -><br>                <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a>) -><br>       string -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t</code></pre><div class="info ">
+Read a shtream from the output of a command, using <code class="code">?reader</code>.
+ If <code class="code">?procref</code> is given, stash the <a href="Proc.html#TYPEt"><code class="code"><span class="constructor">Proc</span>.t</code></a>; if <code class="code">?dups</code>
+ is given, perform the dups in the child process.<br>
+</div>
+
+<pre><span id="VALof_program"><span class="keyword">val</span> of_program</span> : <code class="type">?procref:<a href="Channel.html#TYPEprocref">Channel.procref</a> -><br>       ?dups:<a href="Channel.html#TYPEdup_spec">Channel.dup_spec</a> -><br>       ?reader:(Pervasives.in_channel -><br>                <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a>) -><br>       ?path:bool -><br>       string -><br>       ?argv0:string -><br>       string list -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t</code></pre><div class="info ">
+Read a shtream from the output of a process, using <code class="code">?reader</code>.
+ If <code class="code">?procref</code> is given, stash the <a href="Proc.html#TYPEt"><code class="code"><span class="constructor">Proc</span>.t</code></a>; if <code class="code">?dups</code>
+ is given, perform the dups in the child process.<br>
+</div>
+
+<pre><span id="VALof_thunk"><span class="keyword">val</span> of_thunk</span> : <code class="type">?procref:<a href="Channel.html#TYPEprocref">Channel.procref</a> -><br>       ?dups:<a href="Channel.html#TYPEdup_spec">Channel.dup_spec</a> -><br>       ?reader:(Pervasives.in_channel -><br>                <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a>) -><br>       (unit -> unit) -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t</code></pre><div class="info ">
+Read a shtream from the output of a thunk, using <code class="code">?reader</code>.
+ If <code class="code">?procref</code> is given, stash the <a href="Proc.html#TYPEt"><code class="code"><span class="constructor">Proc</span>.t</code></a>; if <code class="code">?dups</code>
+ is given, perform the dups in the child process.<br>
+</div>
+
+<pre><span id="VALof_string_list"><span class="keyword">val</span> of_string_list</span> : <code class="type">?parse:(string -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a>) -><br>       string list -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t</code></pre><div class="info ">
+Construct a shtream from a list of strings, using <code class="code">?parse</code>.<br>
+</div>
+
+<pre><span id="VALof_string_stream"><span class="keyword">val</span> of_string_stream</span> : <code class="type">?parse:(string -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a>) -><br>       string Stream.t -> <a href="AnyShtreamSig.S.html#TYPEinitial">initial</a> <a href="AnyShtreamSig.S.html#TYPEelem">elem</a> t</code></pre><div class="info ">
+Construct a shtream from a <i>standard
+ library</i> <code class="code"><span class="constructor">Stream</span>.t</code> of strings, using <code class="code">?parse</code>.<br>
+</div>
+</body></html>
